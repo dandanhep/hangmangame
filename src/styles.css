@@ -1,0 +1,60 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hangman img {
+  width: 200px;
+  height: 200px;
+}
+
+.word-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 24px;
+}
+
+.word-display span {
+  margin: 0 5px;
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.alphabet button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.alphabet button:hover {
+  background-color: #bfde9d;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
