@@ -3,7 +3,7 @@ import Header from "./Header";
 import WordDisplay from "./WordDisplay";
 import Alphabet from "./Alphabet";
 import Hangman from "./Hangman";
-import wordList from "../data/wordList"; // Importing the wordList data
+import wordList from "../data/wordList";
 
 const Game = () => {
   const [targetWord, setTargetWord] = useState("");
@@ -11,33 +11,33 @@ const Game = () => {
   const [incorrectGuesses, setIncorrectGuesses] = useState(0);
 
   const startGame = () => {
-    const randomIndex = Math.floor(Math.random() * wordList.length); // Generating a random index
-    setTargetWord(wordList[randomIndex]); // Setting the target word
-    setGuessedLetters([]); // Resetting the guessed letters
-    setIncorrectGuesses(0); // Resetting the incorrect guesses
+    const randomIndex = Math.floor(Math.random() * wordList.length);
+    setTargetWord(wordList[randomIndex]);
+    setGuessedLetters([]);
+    setIncorrectGuesses(0);
   };
 
   const selectLetter = (letter) => {
     if (!guessedLetters.includes(letter)) {
-      setGuessedLetters([...guessedLetters, letter]); // Adding the selected letter to the guessed letters
+      setGuessedLetters([...guessedLetters, letter]);
       if (!targetWord.includes(letter)) {
-        setIncorrectGuesses(incorrectGuesses + 1); // Incrementing incorrect guesses if the selected letter is not in the target word
+        setIncorrectGuesses(incorrectGuesses + 1);
       }
     }
   };
 
   const restartGame = () => {
-    startGame(); // Restarting the game by calling startGame function
+    startGame();
   };
 
   const isWin = () => {
     return targetWord
       .split("")
-      .every((letter) => guessedLetters.includes(letter)); // Checking if all letters in the target word have been guessed
+      .every((letter) => guessedLetters.includes(letter));
   };
 
   const isLoss = () => {
-    return incorrectGuesses >= 10; // Checking if the number of incorrect guesses exceeds the limit
+    return incorrectGuesses >= 10;
   };
 
   return (
